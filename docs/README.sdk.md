@@ -161,7 +161,7 @@ cd ~/sgl-cfs-workspace
 
 > **Important Note:** Do **not** manually `source` the SDK `environment-setup-*` script (e.g., `~/sgl-sdk/environment-setup-riscv64-sgl-linux`). The cFS CMake configuration manages paths directly using the settings configured in the next steps.
 
-### 11. Clone NASA cFS and Submodules
+### Clone NASA cFS and Submodules
 
 Retrieve the NASA cFS core repository and initialize all required submodules.
 
@@ -172,7 +172,7 @@ git submodule init
 git submodule update
 ```
 
-### 12. Configure Architecture and Target Toolchain Settings
+### Configure Architecture and Target Toolchain Settings
 
 Update `target-configs.mk` in `~/sgl-cfs-workspace/cFS/` and create custom
 CMake definitions matching your Yocto SDK properties.
@@ -221,7 +221,7 @@ cp ./sample_defs/riscv64-poky-linux_osconfig.cmake ./sample_defs/riscv64-sgl-lin
 
 ## Building and Verification
 
-### 13. Prepare, Compile, and Install cFS
+### Prepare, Compile, and Install cFS
 
 In case you're not building on the same machine as the SDK where created on,
 install necessary packages:
@@ -244,7 +244,7 @@ Notes:
 - You don't have to compile separately. Install calls compile.
 - You can compile (or install) with `-j$(nproc)`. It should be faster.
 
-### 14. Verify Compiled Executables
+### Verify Compiled Executables
 
 Inspect the target binaries using the `file` utility to verify correct ELF architecture header flags.
 
@@ -254,7 +254,7 @@ file build-qemu_yocto_linux/exe/host/*
 
 ```
 
-### 15. Verify principal Functionality
+### Verify principal Functionality
 
 Using the native and target sysroots in the SDK, the target binaries can be run:
 
